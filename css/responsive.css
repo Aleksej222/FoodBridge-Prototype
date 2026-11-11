@@ -1,0 +1,41 @@
+@media (max-width: 767px) {
+    .brand-tagline {
+        display: none;
+    }
+}
+
+@media (min-width: 640px) {
+    .main-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .brand-tagline {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .cuisine-section {
+        width: 100%;
+    }
+
+    .cuisine-select-wrapper {
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .cuisine-select-wrapper select {
+        width: 100%;
+    }
+
+}

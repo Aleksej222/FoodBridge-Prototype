@@ -1,0 +1,162 @@
+.ingredient-search {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+
+/* Search label */
+
+.ingredient-search .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--muted-foreground);
+
+    margin-bottom: 0.75rem;
+}
+
+
+/* Search form */
+
+.ingredient-form {
+    display: flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    width: 100%;
+}
+
+
+/* Input */
+
+.ingredient-form input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 0.65rem 1rem;
+
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--card);
+    color: var(--foreground);
+
+    font-size: 1rem;
+    font-family: var(--font-body);
+
+    outline: none;
+
+    transition: border-color 0.15s ease;
+}
+
+.ingredient-form input::placeholder {
+    color: #8A877D;
+}
+
+.ingredient-form input:focus {
+    border-color: var(--primary);
+}
+
+
+/* Search button */
+
+.search-button {
+    padding: 0.65rem 1.4rem;
+
+    min-height: 46px;
+
+    background: var(--primary);
+    color: var(--primary-foreground);
+
+    border: none;
+    border-radius: var(--radius);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    font-family: var(--font-body);
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: opacity 0.15s ease;
+}
+
+.search-button:hover {
+    opacity: 0.88;
+}
+
+
+/* Ingredient suggestions */
+
+.ingredient-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    margin-top: 0.75rem;
+}
+
+.suggestions-label {
+    font-size: 0.78rem;
+    color: var(--muted-foreground);
+}
+
+
+/* Suggestion buttons */
+
+.suggestion-button {
+    padding: 0.2rem 0.6rem;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.suggestion-button:hover {
+    background: var(--muted);
+    border-color: var(--primary);
+}
+
+
+/* Search feedback */
+
+.search-feedback {
+    margin-top: 1rem;
+
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+}
+
+@media (max-width: 600px) {
+
+    .ingredient-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ingredient-form input {
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+
+}

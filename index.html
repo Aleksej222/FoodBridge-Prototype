@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodBridge</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/ingredient-search.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/ingredient-alert.css">
+
+</head>
+
+<body>
+
+    <div id="root">
+        <div class="min-h-full" style="background: var(--background); font-family: var(--font-body);">
+
+
+            <header class="site-header">
+                <div class="header-container">
+
+                    <!-- BRAND -->
+                    <div class="brand">
+
+                        <h1 class="brand-logo">
+                            FoodBridge
+                        </h1>
+
+                        <span class="brand-tagline" data-i18n="brandTagline">
+                            ingredient bridge · Norway
+                        </span>
+
+                    </div>
+
+                    <!-- HEADER ACTIONS -->
+                    <div class="header-actions">
+
+                        <div class="language-wrapper">
+
+                            <!-- LANGUAGE BUTTON -->
+                            <button type="button" class="language-button" aria-label="Change language"
+                                data-i18n-aria-label="language" aria-expanded="false">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M2 12h20"></path>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z">
+                                    </path>
+                                </svg>
+                            </button>
+
+                            <!-- LANGUAGE PANEL -->
+                            <div id="language-panel" class="language-panel" hidden>
+
+                                <p class="language-panel-title" data-i18n="language">
+                                    Language
+                                </p>
+
+                                <button type="button" class="language-option" data-language="en">
+                                    <span>English</span>
+                                    <span class="language-option-indicator">✓</span>
+                                </button>
+
+                                <button type="button" class="language-option" data-language="no">
+                                    <span>Norsk</span>
+                                    <span class="language-option-indicator">NO</span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="location-wrapper">
+
+                            <!-- LOCATION BUTTON -->
+                            <button type="button" class="location-button" aria-label="Change shopping location"
+                                data-i18n-aria-label="changeLocation">
+
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                    stroke-linecap="round" stroke-linejoin="round">
+
+                                    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="2.5"></circle>
+
+                                </svg>
+
+                                <span class="location-name">Oslo</span>
+
+                            </button>
+
+                            <!-- LOCATION PANEL -->
+                            <div id="location-panel" class="location-panel" hidden>
+
+                                <p class="location-panel-title" data-i18n="shoppingLocation">
+                                    Shopping location
+                                </p>
+
+                                <p class="location-panel-description" data-i18n="locationDescription">
+                                    Enter an address or city in Norway to tailor store suggestions.
+                                </p>
+
+                                <form id="location-form">
+
+                                    <label for="shopping-address" data-i18n="addressLabel">
+                                        Address or city
+                                    </label>
+
+                                    <input id="shopping-address" type="text" placeholder="e.g. Storgata 1, Bergen"
+                                        data-i18n-placeholder="addressPlaceholder">
+
+                                    <p class="location-hint" data-i18n="locationHint">
+                                        Leave empty to search in Oslo.
+                                    </p>
+
+                                    <button type="submit" class="apply-location-button" data-i18n="applyLocation">
+                                        Apply location
+                                    </button>
+
+                                </form>
+
+                                <p class="location-footer" data-i18n="locationFooter">
+                                    Store stock isn't live.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </header>
+
+
+            <main class="main-content">
+
+                <div class="intro-section">
+                    <h2 class="main-heading">
+                        <span data-i18n="introHeading">Cook your food,</span>
+                        <br>
+                        <em data-i18n="introHeadingEmphasis">wherever you are.</em>
+                    </h2>
+
+                    <p class="intro-description" data-i18n="introDescription">
+                        Search for an ingredient from your home cuisine.
+                        We'll tell you if it's available in Norway.
+                    </p>
+                </div>
+
+                <section class="cuisine-section">
+
+                    <p class="section-label" data-i18n="cuisineLabel">
+                        01 — Select your cuisine
+                    </p>
+
+                    <div class="cuisine-select-wrapper">
+
+                        <select aria-label="Select your cuisine" data-i18n-aria-label="cuisineAriaLabel"
+                            id="cuisine-select">
+
+                            <option value="" disabled selected data-i18n="cuisinePlaceholder">
+                                Select a country / cuisine…
+                            </option>
+
+                            <option value="bosnian">🇧🇦 Bosnian</option>
+                            <option value="croatian">🇭🇷 Croatian</option>
+                            <option value="czech">🇨🇿 Czech</option>
+                            <option value="greek">🇬🇷 Greek</option>
+                            <option value="indian">🇮🇳 Indian</option>
+                            <option value="italian">🇮🇹 Italian</option>
+                            <option value="polish">🇵🇱 Polish</option>
+                            <option value="ukrainian">🇺🇦 Ukrainian</option>
+
+                        </select>
+
+                        <span class="select-arrow">▾</span>
+
+                    </div>
+
+                </section>
+
+                <section id="ingredient-search-section" hidden>
+
+                    <!-- Content generated by JavaScript -->
+
+                </section>
+
+                <div class="empty-state" id="empty-state">
+
+                    <p data-i18n="emptyState">
+                        Choose a cuisine above to get started.
+                    </p>
+
+                </div>
+
+            </main>
+
+
+            <footer class="site-footer" data-i18n="footer">
+                FoodBridge · Find familiar ingredients and alternatives in Norway
+            </footer>
+
+        </div>
+
+
+    </div>
+
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
